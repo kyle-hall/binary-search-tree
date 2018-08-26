@@ -1,3 +1,3 @@
 package bst
 
-class Node(val key: Int, var left: Node?)
+data class Node(val key: Int, var left: Node?, var right: Node?)
