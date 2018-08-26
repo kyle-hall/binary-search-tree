@@ -7,18 +7,18 @@ class BinarySearchTreeTests {
 
     @Test
     fun shouldHaveNullRootWhenEmpty() {
-        val bst = BinarySearchTree(null)
+        val bst = BinarySearchTree()
 
         assertEquals(null, bst.root)
     }
-//
-//    @Test
-//    fun shouldSetRootToFirstNodeAppended() {
-//        val bst = BinarySearchTree(null)
-//        val bst2 = bst.insert(Node(1, null, null))
-//
-//        assertEquals(1, bst2.root?.key)
-//    }
+
+    @Test
+    fun shouldSetRootToFirstNodeAppended() {
+        val bst = BinarySearchTree()
+        bst.insert(1)
+
+        assertEquals(1, bst.root?.key)
+    }
 //
 //    @Test
 //    fun shouldSetAppendedNodeToLeftChildIfLessThanRootKey() {

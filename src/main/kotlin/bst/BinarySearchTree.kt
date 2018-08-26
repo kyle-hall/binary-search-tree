@@ -1,3 +1,11 @@
 package bst
 
-class BinarySearchTree(val root: Node?)
+class BinarySearchTree {
+
+    var root: Node? = null
+
+    fun insert(newKey: Int) {
+        root = Node(newKey)
+    }
+
+}
