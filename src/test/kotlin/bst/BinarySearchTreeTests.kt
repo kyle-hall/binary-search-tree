@@ -30,4 +30,12 @@ class BinarySearchTreeTests {
         assertEquals(2, bst2.left?.root?.key)
     }
 
+    @Test
+    fun insertShouldSetRightChildWhenNewKeyIsGreaterThanRootKey() {
+        val bst = BinarySearchTree().insert(5)
+        val bst2 = bst.insert(8)
+
+        assertEquals(8, bst2.right?.root?.key)
+    }
+
 }

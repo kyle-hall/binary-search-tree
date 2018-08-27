@@ -5,10 +5,14 @@ class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = nul
     fun insert(newKey: Int): BinarySearchTree {
         if (root == null) {
             return BinarySearchTree(Node(newKey))
-        } else if (left == null) {
-            return BinarySearchTree(this.root, BinarySearchTree().insert(newKey))
         } else {
-            return BinarySearchTree()
+            if (root.key > newKey) {
+                return BinarySearchTree(root, left = BinarySearchTree().insert(newKey), right = right)
+            } else if (root.key < newKey) {
+                return BinarySearchTree(root, right = BinarySearchTree().insert(newKey), left = left)
+            } else {
+                return BinarySearchTree()
+            }
         }
     }
 
