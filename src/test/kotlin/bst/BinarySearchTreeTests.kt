@@ -7,37 +7,27 @@ class BinarySearchTreeTests {
 
     @Test
     fun shouldSetRootFromConstructor() {
-        val bst = BinarySearchTree(Node(1, null, null))
+        val bst = BinarySearchTree()
 
-        assertEquals(1, bst.root.key)
+        assertEquals(null, bst.root)
     }
 
     @Test
-    fun shouldSetAppendedNodeToLeftChildIfLessThanRootKey() {
-        val bst = BinarySearchTree(Node(5, null, null))
-        bst.insert(2)
+    fun insertShouldSetRootWhenRootIsNull() {
+        val bst = BinarySearchTree()
 
+        val bst2 = bst.insert(1)
 
-        assertEquals(2, bst.root.left?.key)
+        assertEquals(1, bst2.root?.key)
     }
 
     @Test
-    fun shouldSetAppendedNodeToRightChildIfGreaterThanRootKey() {
-        val bst = BinarySearchTree(Node(5, null, null))
-        bst.insert(8)
+    fun insertShouldSetLeftChildWhenNewKeyIsLessThanRootKey() {
+        val bst = BinarySearchTree().insert(5)
 
-        assertEquals(8, bst.root.right?.key)
+        val bst2 = bst.insert(2)
+
+        assertEquals(2, bst2.left?.root?.key)
     }
-//
-//    @Test
-//    fun shouldSetAppendedNodeToLeftChildOfLeftChildIfLessThanLeftChildKey() {
-//        val bst = BinarySearchTree(null)
-//        val bst2 = bst
-//                .insert(Node(5, null, null))
-//                .insert(Node(2, null, null))
-//                .insert(Node(1, null, null))
-//
-//        assertEquals(1, bst2.root?.left?.left?.key)
-//    }
 
 }

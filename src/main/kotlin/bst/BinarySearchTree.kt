@@ -1,12 +1,14 @@
 package bst
 
-class BinarySearchTree(val root: Node) {
+class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = null, val right: BinarySearchTree? = null) {
 
-    fun insert(newKey: Int) {
-        if (root.key > newKey) {
-            root.left = Node(newKey, null, null)
-        } else if (root.key < newKey) {
-            root.right = Node(newKey, null, null)
+    fun insert(newKey: Int): BinarySearchTree {
+        if (root == null) {
+            return BinarySearchTree(Node(newKey))
+        } else if (left == null) {
+            return BinarySearchTree(this.root, insert(newKey))
+        } else {
+            return BinarySearchTree()
         }
     }
 
