@@ -6,7 +6,7 @@ class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = nul
         if (root == null) {
             return BinarySearchTree(Node(newKey))
         } else if (left == null) {
-            return BinarySearchTree(this.root, insert(newKey))
+            return BinarySearchTree(this.root, BinarySearchTree().insert(newKey))
         } else {
             return BinarySearchTree()
         }
