@@ -45,8 +45,8 @@ jobs:
         - run: gradle jacocoTestReport
 
         - store_artifacts:
-            path: test-reports/
+            path: test-reports/junit/html
             destination: tr1
 
         - store_test_results:
-            path: test-reports/
+            path: test-reports/junit/html
