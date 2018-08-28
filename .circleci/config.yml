@@ -22,31 +22,31 @@ jobs:
       TERM: dumb
 
     steps:
-    - checkout
+      - checkout
 
-    # Download and cache dependencies
-    - restore_cache:
-      keys:
-      - v1-dependencies-{{ checksum "build.gradle" }}
-      # fallback to using the latest cache if no exact match is found
-      - v1-dependencies-
+      # Download and cache dependencies
+      - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "build.gradle" }}
+        # fallback to using the latest cache if no exact match is found
+        - v1-dependencies-
 
-    - run: gradle dependencies
+      - run: gradle dependencies
 
-    - save_cache:
-      paths:
-      - ~/.gradle
-      key: v1-dependencies-{{ checksum "build.gradle" }}
+      - save_cache:
+        paths:
+        - ~/.gradle
+        key: v1-dependencies-{{ checksum "build.gradle" }}
 
-    # run tests!
-    - run: gradle test
+      # run tests!
+      - run: gradle test
 
-    # run coverage report
-    - run: gradle jacocoTestReport
+      # run coverage report
+      - run: gradle jacocoTestReport
 
-    - store_artifacts:
-      path: test-reports/
-      destination: tr1
+      - store_artifacts:
+        path: test-reports/
+        destination: tr1
 
-    - store_test_results:
-      path: test-reports/
+      - store_test_results:
+        path: test-reports/
