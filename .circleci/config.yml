@@ -48,4 +48,4 @@ jobs:
         command: mkdir ./test-results
 
     - store_test_results:
-        path: test-results
+        path: test-results/junit
