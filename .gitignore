@@ -5,3 +5,4 @@ build/
 .gradle/vcsWorkingDirs
 .gradle/4.*
 out/
+test-results/

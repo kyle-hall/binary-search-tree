@@ -44,9 +44,12 @@ jobs:
         # run coverage report
         - run: gradle jacocoTestReport
 
-        - store_artifacts:
-            path: test-reports/junit/html
-            destination: tr1
+        - run:
+            command: mkdir -p test-reports/junit/html
 
         - store_test_results:
             path: test-reports/junit/html
+
+        - store_artifacts:
+            path: test-reports/junit/html
+            destination: tr1
