@@ -34,6 +34,7 @@ test {
 }
 
 jacocoTestReport {
+    reportsDir = file("$buildDir/test-results")
     reports {
         html.enabled = true
     }
