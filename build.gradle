@@ -35,8 +35,7 @@ test {
 
 jacocoTestReport {
     reports {
-        xml.enabled = false
-        csv.enabled = false
+        html.enabled = true
         html.destination file("test-results/junit/html")
     }
 }
