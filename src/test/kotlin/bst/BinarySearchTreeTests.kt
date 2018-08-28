@@ -54,4 +54,12 @@ class BinarySearchTreeTests {
         assertEquals(3, bst2.left?.right?.root?.key)
     }
 
+    @Test
+    fun insertShouldSetLeftOfRightChildWhenNewKeyLessThanRightChild() {
+        val bst = BinarySearchTree().insert(5).insert(8)
+        val bst2 = bst.insert(7)
+
+        assertEquals(7, bst2.right?.left?.root?.key)
+    }
+
 }

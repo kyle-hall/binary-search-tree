@@ -13,7 +13,11 @@ class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = nul
                     return BinarySearchTree(root, left = left.insert(newKey), right = right)
                 }
             } else if (root.key < newKey) {
-                return BinarySearchTree(root, right = BinarySearchTree().insert(newKey), left = left)
+                if (right == null) {
+                    return BinarySearchTree(root, right = BinarySearchTree().insert(newKey), left = left)
+                } else {
+                    return BinarySearchTree(root, right = right.insert(newKey), left = left)
+                }
             } else {
                 return BinarySearchTree()
             }
