@@ -40,15 +40,3 @@ jobs:
 
         # run tests!
         - run: gradle test
-
-        # run coverage report
-        - run: gradle jacocoTestReport
-
-        - run:
-            command: mkdir -p test-reports/junit/html
-
-        - store_test_results:
-            path: test-reports/junit/html
-
-        - store_artifacts:
-            path: test-reports/junit/html/*
