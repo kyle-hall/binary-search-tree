@@ -19,7 +19,7 @@ class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = nul
                     return BinarySearchTree(root, right = right.insert(newKey), left = left)
                 }
             } else {
-                return BinarySearchTree()
+                return this
             }
         }
     }
