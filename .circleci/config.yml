@@ -51,4 +51,4 @@ jobs:
             path: test-reports/junit/html
 
         - store_artifacts:
-            path: test-reports/junit/html
+            path: test-reports/junit/html/*
