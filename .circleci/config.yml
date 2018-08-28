@@ -26,17 +26,17 @@ jobs:
 
     # Download and cache dependencies
     - restore_cache:
-        keys:
-        - v1-dependencies-{{ checksum "build.gradle" }}
-        # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
+      keys:
+      - v1-dependencies-{{ checksum "build.gradle" }}
+      # fallback to using the latest cache if no exact match is found
+      - v1-dependencies-
 
     - run: gradle dependencies
 
     - save_cache:
-        paths:
-        - ~/.gradle
-        key: v1-dependencies-{{ checksum "build.gradle" }}
+      paths:
+      - ~/.gradle
+      key: v1-dependencies-{{ checksum "build.gradle" }}
 
     # run tests!
     - run: gradle test
@@ -44,8 +44,9 @@ jobs:
     # run coverage report
     - run: gradle jacocoTestReport
 
-    - run:
-        command: mkdir ./test-results
+    - store_artifacts:
+      path: test-reports/
+      destination: tr1
 
     - store_test_results:
-        path: test-results/junit
+      path: test-reports/
