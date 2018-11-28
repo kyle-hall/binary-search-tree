@@ -2,6 +2,8 @@ package bst
 
 class BinarySearchTree(val root: Node? = null, val left: BinarySearchTree? = null, val right: BinarySearchTree? = null) {
 
+    // This is just a comment to see if my ssh key still works
+
     fun insert(newKey: Int): BinarySearchTree {
         if (root == null) {
             return BinarySearchTree(Node(newKey))
