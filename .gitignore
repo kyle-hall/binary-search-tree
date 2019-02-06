@@ -1,8 +1,6 @@
 
 build/
 .idea/
-.gradle/buildOutputCleanup/
-.gradle/vcsWorkingDirs
-.gradle/4.*
+.gradle/
 out/
 test-results/
