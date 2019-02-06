@@ -1,9 +1,7 @@
 package bst
 
 import org.junit.Test
-import kotlin.test.assertFailsWith
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
+import kotlin.test.*
 
 class NodeTests {
 
@@ -12,7 +10,7 @@ class NodeTests {
         val n = Node(1)
         val otherNode = Node(2)
 
-        assertFalse(n == otherNode)
+        assertNotEquals(n, otherNode)
     }
 
     @Test
@@ -20,7 +18,7 @@ class NodeTests {
         val n = Node(1)
         val otherNode = Node(1)
 
-        assertTrue(n == otherNode)
+        assertEquals(n, otherNode)
     }
 
     @Test
